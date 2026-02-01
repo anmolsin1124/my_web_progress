@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fill form</title>
+    <h1>University Regstration Form</h1>
+    <p>Please fill form care full becasue its very important</p>
+    <hr>
+    <form>
+        <h2>Personal details</h2>
+        <label for="Fist_Name"> Fist_Name</label>
+        <input type="text" name="Fist_Name" id="Fist_Name" placeholder="anmol.e.g" required>
+        <br>
+        <br>
+        <label for="Last_Name">Last_Name</label>
+        <input type="text" name="Last_Name" id="Last_Name" placeholder="singh. e.g" >
+        <br>
+        <br>
+        <label for="Date_of_birth">Date_of_birth</label>
+            <input type="date" name="Date_of_birth" id="Date_of_birth"required>
+        <br>
+        <h4>Gender</h4>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" value="male"required>
+        <br>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" value="female"required>
+        <br>
+        <label for="other">other</label>
+        <input type="radio" name="other" value="other"required>
+        <br>
+        <label for="Upload Image">Upload Your Image</label>
+        <input type="file" name="Upload Image" id="Upload Image" readonly>
+        <hr>
+        <h2>Contract Information</h2>
+        <label for="Email" >Email address</label>
+        <input type="email" name="Email" id="Email" placeholder="xyz.@gmail.com" required>
+        <br><br>
+        <label for="number">Number</label>
+        <input type="number" name="Mob_number" id="number" placeholder="xxxxxxxxxx"required>
+        <br><br>
+        <label for="address">Address</label>
+        <br>
+        <textarea name="address" id="address" placeholder="enter_Your_Adress" rows="5"
+        cols="20"></textarea>
+        <hr>
+        <h3>Acadmic Information</h3>
+        <label for="select">select Your Course</label>
+        <select  name="Course" id="Course">choose Youe Course
+            <option value="CSE">CSE</option required>
+            <option value="AI">AI</option re>
+            <option value="DS">DS</option>
+            <option value="ML">ML</option>
+        </select>
+        <br>
+        <h4>Enter_Your_Intrest</h4>
+        <label for="sport">sport</label>
+        <input type="checkbox" name="sport" value="sport" id="sport">
+        <br>
+        <label for="art">art</label>
+        <input type="checkbox" name="art" value="art" id="art">
+        <br>
+        <label for="Gaming">Gaming</label>
+        <input type="checkbox" name="Gaming" id="Gaming" value="Gaming">
+        <br>
+        <label for="Dancing">Dancing</label>
+        <input type="checkbox" name="Dancing" id="Dancing" value="Dancing">
+        <br>
+<hr>
+        <h3>Create Your Account</h3>
+        <label for="password">Enter Password</label required> 
+            <input type="password" name="password" id="password" placeholder="at least 8 character">
+        <br>
+        <label for="select">safity Qusetion</label>
+        <select name="Course" id="Course">Question
+            <option value="Puppy">Puppy</option>
+            <option value="Husband">Husband</option>
+            <option value="Brother">Brother</option>
+            <option value="sister">sister</option>
+        </select><br>
+        <label for="conform">conform Password</label>
+
+       
+        <input type="password" name="conform" id="conform" placeholder="at least 8 character">
+        <br>
+        <button type="submit"> submit Your form</button>
+        <button type="reset"> Clear Form </button>
+
+</head>
+<body>
+
+</body>
+</html>
