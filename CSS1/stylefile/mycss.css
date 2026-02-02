@@ -1,0 +1,59 @@
+/* tag sector */
+/* h1{
+
+
+    background-color: rgb(255, 127, 249);
+    font-size: 40px;
+}
+ul{
+    background-color: rgb(127, 255, 212);
+}
+h2{
+    background-color: rgb(255, 255, 127);
+    font-size: 30px;
+}
+ */
+ /* id based ::selection */
+/* #first{
+    background-color: brown;
+}
+#second{
+    background-color: greenyellow}
+#third{
+    background-color: lightgreen;
+}
+#forth{
+    background-color: navajowhite;
+} */
+ /* group based ::selection */
+/* .third{
+    background-color: blanchedalmond;
+}
+.first{
+    background-color: aqua;
+} */
+ /* grup id and class based ::selection */
+/* #first ,#second,.name{
+    background-color: lightseagreen;
+} */
+ /* h1{
+    background-color: rgba(198, 154, 240, 0.37);
+ }
+ h2{
+  background-color: hsla(50, 69%, 68%, 0.788);
+ } */
+  /* h1{
+    background-color: #FF5733;
+  } */
+   h1{
+    font-size: 60px;
+   }
+  ul{
+    font-size: 40px;
+  }
+  li{
+    font-size: 0.858em;
+  }
+  h2{
+    font-size: 2em;
+  }
