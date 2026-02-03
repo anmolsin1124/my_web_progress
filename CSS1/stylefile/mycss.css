@@ -47,13 +47,18 @@ h2{
   } */
    h1{
     font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    }
   ul{
     font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
   }
   li{
     font-size: 0.858em;
   }
   h2{
     font-size: 2em;
+    font-weight: 200;
+    font-family: fantasy;
   }
