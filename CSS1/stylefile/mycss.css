@@ -53,9 +53,12 @@ h2{
     font-size: 40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(223, 32, 32);
   }
   li{
     font-size: 0.858em;
+    /* 540font-family: 'Courier New', Courier, monospace; */
   }
   h2{
     font-size: 2em;

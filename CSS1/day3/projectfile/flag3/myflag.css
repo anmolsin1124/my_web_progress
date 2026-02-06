@@ -1,0 +1,21 @@
+.First{
+    background-color: rgb(187, 10, 19);
+    height: 300px;
+    width:  400px;
+}
+.Second{
+    background-color: rgb(33, 85, 228);
+    height: 100px;
+    width: 400px;
+    position: relative;
+    bottom: 200px;
+}
+.Third{
+    background-color: rgb(255, 255, 255);
+        height: 90px;
+        width: 90px;
+        position: relative;
+        bottom: 295px;
+        left: 150px;
+        border-radius: 50px;
+    }

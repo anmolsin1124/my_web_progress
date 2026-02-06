@@ -1,0 +1,25 @@
+
+h2{
+    background-color: aquamarine;
+    position: sticky;
+    top: 10px;
+}
+h4{
+    background-color: aqua;
+    left: 43px;
+    height: 4555px;
+
+}
+h1{
+    background-color: antiquewhite;
+    border-radius: 50px;
+    position: fixed;
+    left: 100px;
+
+    margin: 0%;
+    height: 4000px;
+
+    padding: 5px;
+
+
+}
