@@ -1,0 +1,33 @@
+.container{
+
+    background-color: rgb(196, 145, 78);
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    
+
+.Box{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    padding: 5px;
+}
+.First{
+    background-color: rgb(241, 43, 43);
+}
+.Second{
+    background-color: rgb(84, 230, 84);
+ 
+}
+.Third{
+    background-color: blue;
+
+}
+.Fourth{
+    background-color: yellow;
+
+}
+.Fifth{
+    background-color: purple;
+ 
+}
