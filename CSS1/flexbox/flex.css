@@ -1,26 +1,34 @@
 .container{
 
-    background-color: rgb(196, 145, 78);
+    background-color: rgb(238, 204, 232);
+    height: 600px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    
+    align-items: center;
+    /* flex-wrap: wrap; */
+    gap: 5px;
+
+}
 
 .Box{
     width: 100px;
     height: 100px;
-    margin: 5px;
     padding: 5px;
 }
 .First{
     background-color: rgb(241, 43, 43);
+    /* flex-basis: 150px; */
 }
 .Second{
     background-color: rgb(84, 230, 84);
+
  
-}
+}   
 .Third{
     background-color: blue;
+    /* align-self: flex-start;   */
+    
 
 }
 .Fourth{
@@ -28,6 +36,6 @@
 
 }
 .Fifth{
-    background-color: purple;
+    background-color: rgb(209, 121, 121);
  
 }

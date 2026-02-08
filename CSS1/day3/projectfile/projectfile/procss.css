@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(57, 99, 189);
+    display: flex;
+    height: 100vh ;
+    position: relative;
+    left: 450px;
+    top: px;
+    
+}
+
+.Box{
+    height: 400px;
+    width: 400px;
+    background-color: #fff;
+    padding: 40px;
+
+}
+
+h1
+{
+    text-align: center;
+    margin: 10px;
+    color:blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+label{
+    font-size: 20px;
+    font-weight: 550;
+    margin-bottom: 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    position: relative;
+    left: 10px;
+}
+
+input{
+    width: 100%;
+    height: 30px;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    border-radius: 45px;
+    cursor: pointer;
+
+}
+
+button{
+    cursor: pointer;
+}
