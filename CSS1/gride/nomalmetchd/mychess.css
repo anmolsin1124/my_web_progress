@@ -1,0 +1,21 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+}
+.Container{
+    height: 700px;
+    width: 700px;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+}
+.White{
+    background-color: aliceblue;
+}
+.Brown{
+    background-color: brown;
+}
