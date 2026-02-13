@@ -1,0 +1,66 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  height: 0px;
+  box-sizing: border-box;
+  background-color: black;
+}
+.container {
+  padding: 50px;
+  position: relative;
+}
+.Box {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(255, 81, 0);
+  animation: moveing;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-delay: 2s;
+  position: absolute;
+}
+/* @keyframes moveing {
+  from {
+    background-color: yellowgreen;
+    top: 10px;
+    left: 10px;
+  }
+  to {
+    background-color: rgb(225, 0, 255);
+    top: 10px;
+    left: 1500px;
+    height: 400px;
+    width: 400px;
+  }
+} */
+@keyframes moveing {
+  0% {
+    background-color: yellowgreen;
+    top: 10px;
+    left: 10px;
+  }
+  25% {
+    background-color: rgb(99, 42, 255);
+    top: 10px;
+    left: 1300px;
+    /* height: 400px;
+    width: 400px; */
+  }
+  50% {
+    background-color: aquamarine;
+    top: 1000x;
+    left: 10px;
+  }
+  /* 75% {
+    background-color: rgb(44, 59, 71);
+    top: 500px;
+    left: 10px;
+  } */
+  /* 100% {
+    background-color: violet;
+  }
+} */
+}

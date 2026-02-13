@@ -17,6 +17,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
+  gap: 10px;
 }
 img {
   width: 100%;
@@ -25,6 +26,19 @@ img {
 .box {
   background-color: aquamarine;
 }
-@media screen and (max-width: 600px) {
-  height: 45px;
+@media screen and (max-width: 1200px) {
+  .container {
+    height: 400px;
+    width: 400px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    height: 400px;
+    width: 400px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
