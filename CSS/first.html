@@ -4,18 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .Box1 {
+        background-color: rgb(168, 209, 85);
+        position: absolute;
+        top: 0px;
+        position: sticky;
+      }
+      .Box2 {
+        background-color: rgb(231, 128, 69);
+        height: 50px;
+      }
+      .Box3 {
+        background-color: rgb(50, 205, 97);
+      }
+      .Box4 {
+        background-color: rgb(50, 104, 205);
+      }
+      .Box {
+        border: 2px solid black;
+        height: 520px;
+        width: 80vw;
+        padding: 5px;
+        margin: 5px;
+      }
+      .parent {
+        padding: 30px;
+        margin: 30px;
+        border: 3px solid green;
+        position: absolute;
+      }
+    </style>
   </head>
   <body>
-    <h1
-      style="
-        background-color: green;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      "
-    >
-      HEllo my name is anmol singh this your name
-    </h1>
+    <div class="parent">
+      <div class="Box Box1"></div>
+      <div class="Box Box2"></div>
+      <div class="Box Box3"></div>
+      <div class="Box Box4"></div>
+    </div>
   </body>
 </html>
