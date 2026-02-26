@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        border: 2px solid black;
+        display: grid;
+        grid-template-areas:
+          "nav nav nav "
+          " side article  article"
+          "  footer  footer  footer"
+          "lower lower lower";
+      }
+      .items {
+        border: 2px solid rgb(27, 70, 150);
+        height: 50px;
+      }
+      .items-1 {
+        grid-area: nav;
+        background-color: yellow;
+      }
+      .items-2 {
+        grid-area: side;
+        background-color: yellowgreen;
+      }
+      .items-3 {
+        grid-area: article;
+        background-color: violet;
+      }
+      .items-4 {
+        grid-area: footer;
+        background-color: tomato;
+      }
+      .items-5 {
+        grid-area: lower;
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body style="background-color: steelblue">
+    <div class="container">
+      <div class="items items-1">1</div>
+      <div class="items items-2">2</div>
+      <div class="items items-3">3</div>
+      <div class="items items-4">4</div>
+      <div class="items items-5">5</div>
+    </div>
+  </body>
+</html>
