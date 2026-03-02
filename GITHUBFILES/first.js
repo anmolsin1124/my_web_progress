@@ -76,6 +76,7 @@ function game() {
 //start the game
 if (typeof window !== "undefined" || typeof prompt === "function") {
   game();
+  ////////////////////////////////
 } else {
   // Node.js will call game() above after setting up readline
   game();
