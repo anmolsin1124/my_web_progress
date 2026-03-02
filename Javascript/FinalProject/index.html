@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zomato</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Small styles for filter popup close button */
+      #filterPopup {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 50;
+        background: #fff;
+        padding: 18px;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      #filterPopup.hidden {
+        display: none;
+      }
+      .close-x {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        background: transparent;
+        border: 0;
+        font-size: 20px;
+        cursor: pointer;
+        color: #333;
+      }
+      .close-x:focus {
+        outline: none;
+      }
+    </style>
   </head>
   <body>
     <div id="head">
@@ -17,6 +47,9 @@
 
     <!-- Filter options popup -->
     <div id="filterPopup" class="hidden">
+      <button id="closePopup" class="close-x" aria-label="Close popup">
+        ×
+      </button>
       <h3>Choose Filter</h3>
       <div class="filterOption">
         <input
@@ -59,7 +92,36 @@
     </div>
 
     <div id="root"></div>
-
     <script src="app.js"></script>
+    <script>
+      // Popup open/close wiring
+      (function () {
+        const filtersBtn = document.getElementById("Filters");
+        const filterPopup = document.getElementById("filterPopup");
+        const closeBtn = document.getElementById("closeFilter"); // existing Close button
+        const closeX = document.getElementById("closePopup");
+
+        function openPopup() {
+          filterPopup.classList.remove("hidden");
+        }
+        function closePopupFn() {
+          filterPopup.classList.add("hidden");
+        }
+
+        if (filtersBtn) filtersBtn.addEventListener("click", openPopup);
+        if (closeBtn) closeBtn.addEventListener("click", closePopupFn);
+        if (closeX) closeX.addEventListener("click", closePopupFn);
+
+        // close when clicking outside popup content
+        filterPopup.addEventListener("click", (e) => {
+          if (e.target === filterPopup) closePopupFn();
+        });
+
+        // handle Escape key
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closePopupFn();
+        });
+      })();
+    </script>
   </body>
 </html>
