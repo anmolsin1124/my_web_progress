@@ -86,10 +86,25 @@
  
 
 
-function placeorder(order:number,callback:(ammount:number)=>void){
-    const ammount = order+10;
-     callback(ammount);
+// function placeorder(order:number,callback:(ammount:number)=>void){
+//     const ammount = order+10;
+//      callback(ammount);
+// }
+// placeorder(45,(ammount)=>{
+//     console.log(ammount)
+// });
+
+/////////////////extend key word in interface
+interface human{
+    name:string,
+    age:number
 }
-placeorder(45,(ammount)=>{
-    console.log(ammount)
-});
+interface employee extends human{
+    salary:number
+}   
+const obj:employee = {
+    name:"Rohit",
+    age:20,
+    salary:2000
+}
+console.log(obj);
