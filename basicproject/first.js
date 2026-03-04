@@ -1299,4 +1299,7 @@ const restaurants = [
     restaurant_open_time: 2,
     restaurant_close_time: 14,
   },
-];
+].map((restaurant, index) => ({
+  id: index + 1,
+  ...restaurant,
+}));

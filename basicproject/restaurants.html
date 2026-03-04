@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Restaurants | Zomato Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="restaurants">
+    <div class="mobile-nav-toggle" id="mobileNavToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <header class="navbar glass" id="navbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-icon">🍽️</span> Zomato<span class="brand-accent"
+          >Clone</span
+        ></a
+      >
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="restaurants.html" class="active"
+          ><i class="fas fa-utensils"></i> Restaurants</a
+        >
+        <a href="offers.html"><i class="fas fa-tags"></i> Offers</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="cart.html" class="cart-link"
+          ><i class="fas fa-shopping-cart"></i> Cart
+          <span class="cart-count" id="cartCount">0</span></a
+        >
+        <a href="login.html" class="btn btn--outline btn--sm"
+          ><i class="fas fa-user"></i> Login</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section__heading">
+          <div>
+            <p class="eyebrow">Explore</p>
+            <h2>Restaurants around you</h2>
+            <p class="muted">
+              Filter by cuisine, offers, price, and live open status.
+            </p>
+          </div>
+          <div class="chips" id="quickFilters">
+            <span class="chip" data-filter="rating">4.5+ rating</span>
+            <span class="chip" data-filter="offers">Offers 20%+</span>
+            <span class="chip" data-filter="open">Open now</span>
+            <span class="chip" data-filter="alcohol">Serves alcohol</span>
+          </div>
+        </div>
+
+        <div class="layout">
+          <aside class="panel filters">
+            <div class="filter-group">
+              <label for="searchInput">Search</label>
+              <input
+                id="searchInput"
+                type="text"
+                placeholder="Search name or location"
+              />
+            </div>
+
+            <div class="filter-group">
+              <label for="cuisineSelect">Cuisine</label>
+              <select id="cuisineSelect">
+                <option value="">Any</option>
+                <option value="Indian">Indian</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Thai">Thai</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Italian">Italian</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="minRating">Minimum rating</label>
+              <input
+                id="minRating"
+                type="range"
+                min="1"
+                max="5"
+                step="1"
+                value="3"
+              />
+              <div class="muted" id="minRatingValue">3</div>
+            </div>
+
+            <div class="filter-group">
+              <label>Price for two</label>
+              <div class="inline">
+                <input
+                  id="maxPrice"
+                  type="number"
+                  min="100"
+                  step="50"
+                  placeholder="Max ₹"
+                />
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <div class="inline">
+                <input type="checkbox" id="openNow" />
+                <label for="openNow">Open now</label>
+              </div>
+              <div class="inline">
+                <input type="checkbox" id="servesAlcohol" />
+                <label for="servesAlcohol">Serves alcohol</label>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <label for="sortSelect">Sort by</label>
+              <select id="sortSelect">
+                <option value="rating">Rating</option>
+                <option value="costLow">Price: Low to High</option>
+                <option value="costHigh">Price: High to Low</option>
+                <option value="distance">Distance</option>
+                <option value="offers">Offers</option>
+              </select>
+            </div>
+
+            <button class="btn" id="clearFilters">
+              <i class="fas fa-redo"></i> Clear filters
+            </button>
+          </aside>
+
+          <section>
+            <div class="list-meta">
+              <p class="muted" id="listStatus">0 restaurants</p>
+              <div class="pill-row">
+                <span class="muted"
+                  ><i class="fas fa-sync-alt"></i> Live sorted view</span
+                >
+              </div>
+            </div>
+            <div class="card-grid stagger" id="restaurantList"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__grid">
+        <div>
+          <h4>🍽️ Zomato<span style="color: var(--accent)">Clone</span></h4>
+          <p>Discover the best food & drinks in your city.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="restaurants.html">Restaurants</a>
+          <a href="offers.html">Offers</a>
+          <a href="about.html">About Us</a>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <a href="login.html">Login / Sign Up</a>
+          <a href="cart.html">Your Cart</a>
+          <a href="checkout.html">Checkout</a>
+          <a href="about.html">FAQ</a>
+        </div>
+      </div>
+      <p class="footer__copy">
+        &copy; 2024 ZomatoClone. Built as a front-end demo.
+      </p>
+    </footer>
+
+    <script src="first.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

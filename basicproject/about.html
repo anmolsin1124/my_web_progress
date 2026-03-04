@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Zomato Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="about">
+    <div class="mobile-nav-toggle" id="mobileNavToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <header class="navbar glass" id="navbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-icon">🍽️</span> Zomato<span class="brand-accent"
+          >Clone</span
+        ></a
+      >
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="restaurants.html"
+          ><i class="fas fa-utensils"></i> Restaurants</a
+        >
+        <a href="offers.html"><i class="fas fa-tags"></i> Offers</a>
+        <a href="about.html" class="active"
+          ><i class="fas fa-info-circle"></i> About</a
+        >
+        <a href="cart.html" class="cart-link"
+          ><i class="fas fa-shopping-cart"></i> Cart
+          <span class="cart-count" id="cartCount">0</span></a
+        >
+        <a href="login.html" class="btn btn--outline btn--sm"
+          ><i class="fas fa-user"></i> Login</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <!-- About Hero -->
+      <section class="about-hero">
+        <div class="about-hero__content fade-up">
+          <p class="eyebrow"><i class="fas fa-heart"></i> Our Story</p>
+          <h1>Better food discovery for everyone.</h1>
+          <p class="lede">
+            We built ZomatoClone to bring the joy of discovering great
+            restaurants right to your fingertips, with honest ratings, real-time
+            status, and a beautiful experience.
+          </p>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="section">
+        <div class="about-stats fade-up">
+          <div class="about-stat">
+            <i class="fas fa-utensils fa-2x"></i>
+            <h3 id="aboutTotalRestaurants">0</h3>
+            <p>Restaurants Listed</p>
+          </div>
+          <div class="about-stat">
+            <i class="fas fa-map-marker-alt fa-2x"></i>
+            <h3 id="aboutTotalLocations">0</h3>
+            <p>Locations Covered</p>
+          </div>
+          <div class="about-stat">
+            <i class="fas fa-globe fa-2x"></i>
+            <h3 id="aboutTotalCuisines">0</h3>
+            <p>Cuisines Available</p>
+          </div>
+          <div class="about-stat">
+            <i class="fas fa-star fa-2x"></i>
+            <h3 id="aboutTopRated">0</h3>
+            <p>Top Rated (4+)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission -->
+      <section class="section">
+        <div class="about-mission fade-up">
+          <div class="about-mission__text">
+            <p class="eyebrow">Our Mission</p>
+            <h2>Great food should be easy to find.</h2>
+            <p>
+              We believe that exploring food should be delightful. Whether
+              you're looking for a quick bite, a fancy dinner, or the best deal
+              in town — ZomatoClone helps you decide. With live open-now status,
+              detailed filters, and curated collections, we make sure you never
+              have a bad meal.
+            </p>
+            <p>
+              This is a fully front-end demonstration project showcasing modern
+              HTML, CSS, and JavaScript techniques — no backend, no logins, just
+              beautiful interfaces.
+            </p>
+          </div>
+          <div class="about-mission__visual">
+            <div class="about-mission__card">
+              <i class="fas fa-clock fa-3x"></i>
+              <h3>Real-time Status</h3>
+              <p>See which restaurants are open right now.</p>
+            </div>
+            <div class="about-mission__card">
+              <i class="fas fa-filter fa-3x"></i>
+              <h3>Smart Filters</h3>
+              <p>Sort by price, distance, rating, cuisine & more.</p>
+            </div>
+            <div class="about-mission__card">
+              <i class="fas fa-percent fa-3x"></i>
+              <h3>Best Offers</h3>
+              <p>Find the biggest discounts at a glance.</p>
+            </div>
+            <div class="about-mission__card">
+              <i class="fas fa-mobile-alt fa-3x"></i>
+              <h3>Mobile Ready</h3>
+              <p>Fully responsive design on any device.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team -->
+      <section class="section">
+        <div class="section__heading fade-up">
+          <div>
+            <p class="eyebrow">The Team</p>
+            <h2>Built with passion</h2>
+          </div>
+        </div>
+        <div class="team-grid fade-up">
+          <div class="team-card">
+            <div class="team-avatar">
+              <i class="fas fa-user-circle fa-4x"></i>
+            </div>
+            <h3>Anmol Singh</h3>
+            <p class="muted">Full Stack Developer</p>
+            <p>
+              Designed & built this entire Zomato clone from scratch using
+              vanilla JS, CSS, and HTML.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section">
+        <div class="section__heading fade-up">
+          <div>
+            <p class="eyebrow">FAQ</p>
+            <h2>Frequently asked questions</h2>
+          </div>
+        </div>
+        <div class="faq-list fade-up" id="faqList">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this a real food delivery service?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No — this is a front-end only project built for demonstration
+                and learning purposes. No real orders or payments are processed.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Where does the restaurant data come from?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                All restaurant data is a curated mock dataset defined in
+                first.js. It includes 90+ entries with randomized but realistic
+                properties.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I add my own restaurant? <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes! Simply add a new object to the restaurants array in
+                first.js and refresh. Your restaurant will appear in all pages
+                automatically.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the cart persist on reload?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. The cart uses localStorage so your items survive page
+                refreshes. Use the "Clear cart" button to reset.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What technologies are used? <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Pure HTML5, CSS3 (with custom properties, grid, flexbox,
+                animations), and vanilla ES6+ JavaScript — no frameworks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__grid">
+        <div>
+          <h4><span class="brand-icon">🍽️</span> ZomatoClone</h4>
+          <p>Explore the best food around you.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="restaurants.html">Restaurants</a>
+          <a href="offers.html">Offers</a>
+          <a href="about.html">About</a>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copy">
+        &copy; 2026 ZomatoClone. Built as a front-end experience.
+      </p>
+    </footer>
+
+    <script src="first.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

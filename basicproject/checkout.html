@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Zomato Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="checkout">
+    <div class="mobile-nav-toggle" id="mobileNavToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <header class="navbar glass" id="navbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-icon">🍽️</span> Zomato<span class="brand-accent"
+          >Clone</span
+        ></a
+      >
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="restaurants.html"
+          ><i class="fas fa-utensils"></i> Restaurants</a
+        >
+        <a href="offers.html"><i class="fas fa-tags"></i> Offers</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="cart.html" class="cart-link"
+          ><i class="fas fa-shopping-cart"></i> Cart
+          <span class="cart-count" id="cartCount">0</span></a
+        >
+        <a href="login.html" class="btn btn--outline btn--sm"
+          ><i class="fas fa-user"></i> Login</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section__heading fade-up">
+          <div>
+            <p class="eyebrow"><i class="fas fa-credit-card"></i> Checkout</p>
+            <h2>Complete your order</h2>
+            <p class="muted">Fill in your delivery details below.</p>
+          </div>
+        </div>
+
+        <div class="checkout-grid">
+          <!-- Delivery Details -->
+          <div class="detail-card fade-up">
+            <h3><i class="fas fa-map-marker-alt"></i> Delivery Details</h3>
+            <form id="checkoutForm">
+              <div class="form-group">
+                <label for="coName"
+                  ><i class="fas fa-user"></i> Full Name</label
+                >
+                <input
+                  type="text"
+                  id="coName"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="coPhone"
+                  ><i class="fas fa-phone"></i> Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="coPhone"
+                  placeholder="+91 9999999999"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="coAddress"
+                  ><i class="fas fa-home"></i> Delivery Address</label
+                >
+                <textarea
+                  id="coAddress"
+                  rows="3"
+                  placeholder="House no, street, landmark…"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="coCity"><i class="fas fa-city"></i> City</label>
+                  <input type="text" id="coCity" value="New Delhi" />
+                </div>
+                <div class="form-group">
+                  <label for="coPincode"
+                    ><i class="fas fa-map-pin"></i> Pincode</label
+                  >
+                  <input type="text" id="coPincode" placeholder="110001" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label><i class="fas fa-credit-card"></i> Payment Method</label>
+                <div class="payment-options">
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="cod" checked />
+                    <i class="fas fa-money-bill-wave"></i> Cash on Delivery
+                  </label>
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="card" />
+                    <i class="fas fa-credit-card"></i> Credit / Debit Card
+                  </label>
+                  <label class="payment-option">
+                    <input type="radio" name="payment" value="upi" />
+                    <i class="fas fa-mobile-alt"></i> UPI
+                  </label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn--full">
+                <i class="fas fa-check"></i> Place Order
+              </button>
+            </form>
+          </div>
+
+          <!-- Order Summary -->
+          <div class="detail-card fade-up">
+            <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+            <div id="checkoutItems"></div>
+            <div class="checkout-summary">
+              <div class="checkout-row">
+                <span>Subtotal</span><span id="coSubtotal">₹0</span>
+              </div>
+              <div class="checkout-row">
+                <span>Delivery Fee</span><span>₹49</span>
+              </div>
+              <div class="checkout-row">
+                <span>Taxes & Charges</span><span id="coTax">₹0</span>
+              </div>
+              <div class="checkout-row total">
+                <span>Total</span><span id="coTotal">₹0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Order Success Modal -->
+      <div class="modal-overlay hidden" id="successModal">
+        <div class="modal-card">
+          <div class="modal-icon success">
+            <i class="fas fa-check-circle fa-4x"></i>
+          </div>
+          <h2>Order Placed!</h2>
+          <p class="muted">
+            Your food is on its way. Estimated delivery in 30-45 minutes.
+          </p>
+          <button class="btn" id="successClose">
+            <i class="fas fa-home"></i> Back to Home
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__grid">
+        <div>
+          <h4><span class="brand-icon">🍽️</span> ZomatoClone</h4>
+          <p>Explore the best food around you.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="restaurants.html">Restaurants</a>
+          <a href="offers.html">Offers</a>
+          <a href="about.html">About</a>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copy">
+        &copy; 2026 ZomatoClone. Built as a front-end experience.
+      </p>
+    </footer>
+
+    <script src="first.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

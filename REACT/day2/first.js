@@ -1,40 +1,62 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-const element = React.createElement("h1", { id: "first", className: "Rahul", style: { backgroundColor: "blue", fontSize: "30px", color: "pink" } }, "Hello Coder Army");
-const element2 = React.createElement("h2", { id: "second", className: "Rahul", style: { backgroundColor: "black", fontSize: "30px", color: "pink" } }, "Maja aaya muje");
-// ReactDOM.render(element,document.getElementById('root'));
-// element : 50 card pade hue hai
-const div1 = React.createElement('div', {}, [element, element2]);
+import ReactDOM from "react-dom/client"
+
+// const element = React.createElement("h1",{id:"first", className:"Rahul", style:{backgroundColor:"blue", fontSize:"30px", color:"pink"}},"Hello Coder Army");
+// const element2 = React.createElement("h2",{id:"second", className:"Rahul", style:{backgroundColor:"black", fontSize:"30px", color:"pink"}},"Maja aaya muje");
+// console.log(element);
+//                   React                        Render
+// React.createElement() => react element(JSObject) => HTML Element
+
+// React.createElement('h1',{},"Hello Coder Army");
+// const newElement = <h1>Hello Coder Army</h1>
+//     babel:                   React                      Render
+// JSX => React.createElement() => react element(JSObject) => HTML Element
+
+// JSX: JS ke expression
+// const names = "Rohit";
+// const obj = {
+//     age: 23,
+//     salary: 60
+// }
+
+// const obj2 = {
+//     backgroundColor: "black",
+//     color: "pink",
+//     fontSize: "30px"
+// }
+
+// // React ELement
+// const newElement = (
+//     <>
+//         <h1 id="first" className="second" >Hello Coder Army {names}</h1>
+//         <h2 style={{ backgroundColor: "green", color: "red" }}>Maja aaya muje {obj.age}</h2>
+//     </>
+// )
+
+
+// React Component
+// function Based Component
+
+function greet() {
+    return <h1>Hello My Name Is Anmol Singh</h1>
+};
+
+const meet = () => {
+    return <h2>And Tell Me What IS Your Name </h2>
+}
+
+
+const newElement2 = greet();
+const newElement3 = meet();
+
+const newElement4 = <>{greet()} {meet()}</>
+
 const Reactroot = ReactDOM.createRoot(document.getElementById('root'));
-// React root container: is
-// Reactroot.render(element);
-// Reactroot.render(element2);
-Reactroot.render(div1);
 
+Reactroot.render(newElement4);
 
-// {/* <div>
-//     <h1>Hello Coder Army</h1>
-//     <h2>Maja aaya muje</h2>
-// </div> */}
+// JSX: Javascript XML: HTML code direct js ke andar likh sakte ho
 
-
-
-
-// function sum(a,b){
-//     return a+b;
-// }
-
-// sum(2,3);
-// version: 18.2.3
-
-
-// function sum(a,b){
-//     return a+b;
-// }
-
-// function subtract(a,b){
-//     return a-b;
-// }
 
 
 

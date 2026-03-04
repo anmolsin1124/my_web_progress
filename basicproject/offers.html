@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offers & Deals | Zomato Clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="offers">
+    <!-- Mobile Nav Toggle -->
+    <div class="mobile-nav-toggle" id="mobileNavToggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <header class="navbar glass" id="navbar">
+      <a class="brand" href="index.html"
+        ><span class="brand-icon">🍽️</span> Zomato<span class="brand-accent"
+          >Clone</span
+        ></a
+      >
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="restaurants.html"
+          ><i class="fas fa-utensils"></i> Restaurants</a
+        >
+        <a href="offers.html" class="active"
+          ><i class="fas fa-tags"></i> Offers</a
+        >
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        <a href="cart.html" class="cart-link"
+          ><i class="fas fa-shopping-cart"></i> Cart
+          <span class="cart-count" id="cartCount">0</span></a
+        >
+        <a href="login.html" class="btn btn--outline btn--sm"
+          ><i class="fas fa-user"></i> Login</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Banner -->
+      <section class="offers-hero">
+        <div class="offers-hero__bg"></div>
+        <div class="offers-hero__content fade-up">
+          <p class="eyebrow"><i class="fas fa-fire"></i> Hot Deals</p>
+          <h1>Save Big on Every Bite</h1>
+          <p class="lede">
+            Discover exclusive discounts, flat deals, and limited-time offers
+            from top restaurants near you.
+          </p>
+        </div>
+      </section>
+
+      <!-- Featured Deals -->
+      <section class="section">
+        <div class="section__heading fade-up">
+          <div>
+            <p class="eyebrow">Featured</p>
+            <h2>Today's top deals</h2>
+            <p class="muted">Handpicked offers refreshed daily.</p>
+          </div>
+        </div>
+        <div class="offers-grid" id="featuredDeals"></div>
+      </section>
+
+      <!-- All Deals by Cuisine -->
+      <section class="section">
+        <div class="section__heading fade-up">
+          <div>
+            <p class="eyebrow">Browse by Cuisine</p>
+            <h2>Deals for every craving</h2>
+          </div>
+          <div class="chips" id="offerCuisineChips"></div>
+        </div>
+        <div class="card-grid" id="allDeals"></div>
+      </section>
+
+      <!-- How it works -->
+      <section class="section">
+        <div class="section__heading fade-up">
+          <div>
+            <p class="eyebrow">How it works</p>
+            <h2>Redeem in 3 easy steps</h2>
+          </div>
+        </div>
+        <div class="steps-grid fade-up">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <i class="fas fa-search fa-2x"></i>
+            <h3>Browse deals</h3>
+            <p>Find discounts from nearby restaurants or search by cuisine.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <i class="fas fa-cart-plus fa-2x"></i>
+            <h3>Add to cart</h3>
+            <p>Pick dishes from the restaurant's menu at discounted prices.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <i class="fas fa-check-circle fa-2x"></i>
+            <h3>Enjoy savings</h3>
+            <p>
+              Checkout and see the discount applied to your total instantly.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__grid">
+        <div>
+          <h4><span class="brand-icon">🍽️</span> ZomatoClone</h4>
+          <p>Explore the best food around you with great offers.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="restaurants.html">Restaurants</a>
+          <a href="offers.html">Offers</a>
+          <a href="about.html">About</a>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copy">
+        &copy; 2026 ZomatoClone. Built as a front-end experience.
+      </p>
+    </footer>
+
+    <script src="first.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
