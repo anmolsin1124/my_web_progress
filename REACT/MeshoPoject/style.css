@@ -1,0 +1,67 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.images {
+  position: relative;
+  left: 60px;
+  top: 10px;
+}
+
+.option {
+  padding-top: 30px;
+  cursor: pointer;
+}
+
+.but,
+.pro {
+  margin-right: 10px;
+  height: 30px;
+  border: none;
+  background-color: white;
+  font-size: 20px;
+}
+
+.searchbar {
+  width: 400px;
+  height: 30px;
+  position: relative;
+  top: 30px;
+}
+
+.Profile {
+  padding-top: 30px;
+  padding-right: 20px;
+}
+
+.middle {
+  background-color: rgb(153, 217, 246);
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  justify-content: center;
+}
+
+.card {
+  background-color: rgb(18, 153, 215);
+  color: white;
+  border-radius: 10%;
+  box-shadow: 0px 0px 10px 5px rgb(54, 154, 163);
+}
+button {
+  height: 50px;
+  background-color: rgb(18, 153, 215);
+  font-size: 15px;
+  margin: 2px;
+  font-weight: 500px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 10%;
+}

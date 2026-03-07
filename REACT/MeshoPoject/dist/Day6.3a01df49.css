@@ -1,0 +1,68 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  justify-content: space-between;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.images {
+  position: relative;
+  top: 10px;
+  left: 60px;
+}
+
+.option {
+  cursor: pointer;
+  padding-top: 30px;
+}
+
+.but, .pro {
+  background-color: #fff;
+  border: none;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.searchbar {
+  width: 400px;
+  height: 30px;
+  position: relative;
+  top: 30px;
+}
+
+.Profile {
+  padding-top: 30px;
+  padding-right: 20px;
+}
+
+.middle {
+  background-color: #99d9f6;
+  justify-content: center;
+  padding-top: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.card {
+  color: #fff;
+  background-color: #1299d7;
+  border-radius: 10%;
+  box-shadow: 0 0 10px 5px #369aa3;
+}
+
+button {
+  height: 50px;
+  font-size: 15px;
+  font-weight: 500px;
+  background-color: #1299d7;
+  border-radius: 10%;
+  margin: 2px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/*# sourceMappingURL=Day6.3a01df49.css.map */
