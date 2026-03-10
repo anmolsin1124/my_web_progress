@@ -1,0 +1,37 @@
+body {
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#root {
+  text-align: center;
+  background-color: #b8e8e8;
+  border-radius: 3%;
+  width: 500px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+button {
+  color: #fff;
+  border-radius: 10%;
+  width: 70px;
+  height: 40px;
+  margin-right: 10px;
+  font-weight: 800;
+}
+
+.counter {
+  text-align: center;
+  background-color: #1d6cc1;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  margin-left: 100px;
+}
+/*# sourceMappingURL=hooks.3a01df49.css.map */
