@@ -1,28 +1,48 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom/client"
 import { BrowserRouter, Routes, Route, Link } from "react-router";
 import Home from "./src/Home";
-import About from "./src/DashBoard";
-import Contact from "./src/Contract";
-import DashBoard from "./src/DashBoard";
+import Contact from "./src/Contact";
+import Dashboard from "./src/Dashboard";
+import Details from "./src/Details";
+import Zero from "./src/Zero";
+import Hello from "./src/Hello";
+import Hi from "./src/Hi";
 
 
 function App() {
+
     return (
+
         <BrowserRouter>
+
             <nav>
-                <Link to="/Home" style={{ backgroundColor: "green", color: 'white', fontSize: '40px', border: '1px solid white' }}> Home</Link>
-                <Link to="/Contact" style={{ backgroundColor: "Yellow", color: 'black', fontSize: '40px' }}
-                > Contact</Link>
-                <Link to="/DashBoard" style={{ backgroundColor: "green", color: 'white', fontSize: '40px' }}> DashBoard</Link>
+                <Link to="/">Home</Link>
+                <Link to="/Contact">Contact</Link>
+                <Link to="/Dashboard">Dashboard</Link>
+                <Link to="/Details">Details</Link>
             </nav>
+
             <Routes>
-                <Route path="/Home" element={<Home></Home>}></Route>
+                <Route path="/" element={<Home></Home>}></Route>
                 <Route path="/Contact" element={<Contact></Contact>}></Route>
-                <Route path="/DashBoard" element={<DashBoard></DashBoard>}></Route>
+                <Route path="/Dashboard" element={<Dashboard />}></Route>
+                <Route path="/Details" element={<Details></Details>}>
+
+                    <Route index element={<Zero></Zero>}></Route>
+                    <Route path="Hello" element={<Hello></Hello>}></Route>
+                    <Route path="Hi" element={<Hi></Hi>}></Route>
+
+                </Route>
             </Routes>
+
+
+            {/* footer section */}
         </BrowserRouter>
+
     )
 }
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<App></App>)
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App></App>);
+
