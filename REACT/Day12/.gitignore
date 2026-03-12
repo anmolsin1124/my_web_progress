@@ -12,4 +12,4 @@ dist/
 build/
 
 # OS files
-.DS_Store
+.DS_Storenode_modules/
