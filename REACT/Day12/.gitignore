@@ -1,15 +1,6 @@
-# node modules
 node_modules/
-
-# logs
-*.log
-
-# environment variables
 .env
-
-# build folders
 dist/
 build/
-
-# OS files
-.DS_Storenode_modules/
+*.log
+.vscode/
