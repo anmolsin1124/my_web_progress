@@ -8,6 +8,8 @@ import Details from "./src/Details";
 import Zero from "./src/Zero";
 import Hello from "./src/Hello";
 import Hi from "./src/Hi";
+import GitHub from "./src/GitHub.js";
+
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
                 <Link to="/Contact">Contact</Link>
                 <Link to="/Dashboard">Dashboard</Link>
                 <Link to="/Details">Details</Link>
+                <Link to="/Github">GitHub</Link>
             </nav>
 
             <Routes>
@@ -34,6 +37,9 @@ function App() {
                     <Route path="Hi" element={<Hi></Hi>}></Route>
 
                 </Route>
+
+                <Route path="/Github/:name" element={<GitHub></GitHub>}></Route>
+
             </Routes>
 
 
