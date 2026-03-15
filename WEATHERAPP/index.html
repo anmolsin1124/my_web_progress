@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherNow</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header class="app-header">
+        <h1 class="logo">Weather<span>Now</span></h1>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="theme-icon">☾</span>
+        </button>
+      </header>
+
+      <main class="app-main">
+        <section class="search-section">
+          <form id="searchForm" class="search-form" autocomplete="off">
+            <input
+              type="text"
+              id="cityInput"
+              class="search-input"
+              placeholder="Search city (e.g. Delhi, London)"
+              aria-label="City name"
+              required
+            />
+            <button type="submit" class="search-button">
+              <i class="fa-solid fa-magnifying-glass"></i> Search
+            </button>
+            <button
+              type="button"
+              class="geo-button"
+              id="geoButton"
+              title="Use current location"
+            >
+              <i class="fa-solid fa-location-crosshairs"></i>
+            </button>
+          </form>
+          <p class="hint">
+            Real-time weather powered by OpenWeather. Minimal. Fast.
+          </p>
+        </section>
+
+        <section class="card" id="weatherCard" hidden>
+          <div class="card-header">
+            <div>
+              <h2 id="cityName" class="city-name">—</h2>
+              <p id="country" class="country-code">—</p>
+            </div>
+            <p id="updatedAt" class="updated-at">Updated just now</p>
+          </div>
+
+          <div class="card-main">
+            <div class="temp-block">
+              <img id="weatherIcon" class="weather-icon" src="" alt="" hidden />
+              <p id="temperature" class="temperature">—°</p>
+              <p id="feelsLike" class="feels-like">Feels like —°</p>
+            </div>
+            <div class="meta-block">
+              <div class="meta-row">
+                <span class="meta-label"
+                  ><i class="fa-solid fa-cloud"></i> Condition</span
+                >
+                <span id="condition" class="meta-value">—</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label"
+                  ><i class="fa-solid fa-droplet"></i> Humidity</span
+                >
+                <span id="humidity" class="meta-value">—%</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label"
+                  ><i class="fa-solid fa-wind"></i> Wind</span
+                >
+                <span id="wind" class="meta-value">— km/h</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label"
+                  ><i class="fa-solid fa-gauge-high"></i> Pressure</span
+                >
+                <span id="pressure" class="meta-value">— hPa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="pill" id="minMax">
+              <i class="fa-solid fa-temperature-half"></i> — / —°
+            </div>
+            <div class="pill" id="sunTimes">
+              <i class="fa-solid fa-sun"></i> Sunrise — • Sunset —
+            </div>
+          </div>
+        </section>
+
+        <section class="state" id="stateSection">
+          <div class="state-inner" id="stateInner">
+            <div class="spinner-overlay" id="spinnerOverlay" hidden>
+              <div class="spinner"></div>
+              <p class="spinner-text">Fetching weather data…</p>
+            </div>
+            <p id="stateMessage">Search for a city to see the weather.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <p>
+          Data by
+          <a
+            href="https://openweathermap.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >OpenWeather</a
+          >
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
