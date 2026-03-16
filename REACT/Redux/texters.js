@@ -1,14 +1,12 @@
 const state = {
-    slice1: {
-        count: 0
+    slice1:{
+        count:0
     },
-    slice2: {
-        count: 0,
-        Name: "Anmol",
+    slice2:{
+        count:2,
+        name:"Rohit"
     },
-    slice3: {
-        count: 0,
-        Name: "Anmol",
-        Age: 22
+    slice3:{
+        login:true,
     }
 }

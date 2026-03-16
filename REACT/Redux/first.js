@@ -1,15 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import { ReactReduxContext } from "react-redux";
+import ReactDOM from "react-dom/client"
 import { Provider } from "react-redux";
-import store from "./store";
-function App() {
-    return (
-        <>
-            <Provider store={store}>
-                <Counting />
-            </Provider>
-        </>
-    )
+import stores from "./stores";
+import Counting from "./Counting";
 
-    const root = ReactDOM.createRoot(document.getElementById("root")).render(<App />)
+function App(){
+    
+    console.log(stores);
+
+    return (
+        <Provider store={stores}>
+        <Counting></Counting>
+        </Provider>
+  
+    )
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App></App>);
+
+
