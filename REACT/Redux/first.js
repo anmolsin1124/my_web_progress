@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
 import { Provider } from "react-redux";
-import stores from "./stores";
+import stores from "./Stores";
 import Counting from "./Counting";
 
-function App(){
-    
+function App() {
+
     console.log(stores);
 
     return (
         <Provider store={stores}>
-        <Counting></Counting>
+            <Counting></Counting>
         </Provider>
-  
+
     )
 }
 
