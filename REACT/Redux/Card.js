@@ -40,19 +40,15 @@ export default function Card() {
         }
     }
     return (
-        <div>
+        <>
             {foodItem.map((value) => {
                 return (
-                    ///convert card sytle into card design  
-                    <div key={value.id} style={{ border: '1px solid black', margin: '10px', padding: '10px' }}>
-                        <h3>{value.food}</h3>
-                        <p>Price: {value.Price}</p>
-                        <button onClick={() => setIncart(!isCart)}>
-                            {isCart ? 'Remove' : 'Add'}
-                        </button>
+                    <div key={value.id}>
+                        <FoodCart></FoodCart>
                     </div>
                 )
             })}
-        </div>
+        </>
     )
+
 }
