@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FoodCart from "./FoodCart";
 const foodItem = [
     { id: 1, food: 'Pizza', Price: "200" },
     { id: 2, food: 'Burger', Price: "100" },
@@ -44,7 +45,7 @@ export default function Card() {
             {foodItem.map((value) => {
                 return (
                     <div key={value.id}>
-                        <FoodCart></FoodCart>
+                        <FoodCart value={value}></FoodCart>
                     </div>
                 )
             })}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function Card() {
+export default function FoodCart({ value }) {
     const [isCart, setIncart] = useState(false);
     function handleCart() {
         if (isCart) {
@@ -18,7 +18,7 @@ export default function Card() {
             <h2>
                 {value.Price}
             </h2>
-            <button onClick={handleclick}>{isCart ? 'Remove' : 'Add'}</button>
+            <button onClick={handleCart}>{isCart ? 'Remove' : 'Add'}</button>
         </>
     )
 }
