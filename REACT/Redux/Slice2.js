@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+// import cartReducer from "./Slicer2";
 const FoodSlicer = createSlice({
     name: 'slice2',
     initialState: { count: 0 },
