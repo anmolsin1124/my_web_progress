@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client"
-import store from "./Store";
+import store from "./Store  ";
 import { Provider } from "react-redux";
 import CoinCreate from "./CoinCreate";
+import { createRef  } from "react";
 
 
 function App(){
