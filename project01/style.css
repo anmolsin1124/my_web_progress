@@ -1,0 +1,32 @@
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: yellowgreen;
+}
+.hello {
+  background-color: yellow;
+  margin: 5px;
+  padding: 2px;
+}
+.Header2 {
+  border-radius: 10%;
+}
+.My {
+  background-color: violet;
+  margin: 5px;
+  padding: 2px;
+}
+.Name {
+  background-color: tomato;
+  margin: 5px;
+  padding-bottom: 50px;
+  padding: 2px;
+}
+.fix {
+  background-color: rgb(39, 174, 184);
+  margin: 10px;
+  border-radius: 10%;
+  padding: 5px;
+}
