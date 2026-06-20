@@ -1,11 +1,13 @@
 const { GoogleGenAI } = require('@google/genai');
 const readlineSync = require('readline-sync');
- 
-// Wait for user's response.
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const WEATHER_API_KEY = process.env.WEATHER_API_KEY;
 
+if (!GEMINI_API_KEY || !WEATHER_API_KEY) {
+  throw new Error('Missing GEMINI_API_KEY or WEATHER_API_KEY in environment variables.');
+}
 
-
-const ai = new GoogleGenAI({ apiKey: "AIzaSyDtzRE8gxYLYbe7MVEwa2HDIPM110lr2_s"});
+const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 const ConversationHistory = [];
 
 
@@ -14,47 +16,51 @@ async function main() {
     model: "gemini-2.0-flash",
     contents: ConversationHistory
   });
-  
+
   return response.text;
 }
 
 
-
-// Weather leke aayega
-
-
 async function getWeather(location) {
-    
-    const weatherInfo = [];
-    for(const {city,date} of location){
-        
-       if(date.toLowerCase()=='today') 
-       {
-        console.log("Hello Data fetching");
-        const response =  await fetch(`http://api.weatherapi.com/v1/current.json?key=1c930efb35ea46caa93123748252504&q=${city}`);
-        const data = await response.json();
-        weatherInfo.push(data);
-       }
-       else{
-        console.log("I am second");
-        const response =  await fetch(`http://api.weatherapi.com/v1/future.json?key=1c930efb35ea46caa93123748252504&q=${city}&dt=${date}`);
-        const data = await response.json();
-        weatherInfo.push(data);
-       }
+  if (!Array.isArray(location)) {
+    throw new Error('location must be an array');
+  }
+
+  const weatherInfo = [];
+  for (const { city, date } of location) {
+    const safeCity = encodeURIComponent(city);
+    const safeDate = String(date).toLowerCase();
+
+    if (safeDate === 'today') {
+      const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${safeCity}`);
+      if (!response.ok) {
+        throw new Error(`Weather API request failed for ${city}: ${response.status} ${response.statusText}`);
+      }
+      const data = await response.json();
+      weatherInfo.push(data);
     }
-    
-    return weatherInfo;
+    else {
+      const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${safeCity}&dt=${encodeURIComponent(date)}`);
+      if (!response.ok) {
+        throw new Error(`Weather API request failed for ${city} (${date}): ${response.status} ${response.statusText}`);
+      }
+      const data = await response.json();
+      weatherInfo.push(data);
+    }
+  }
+
+  return weatherInfo;
 }
 
 
 
-async function chatting(){
+async function chatting() {
 
-const question = readlineSync.question('How I can Help You--> ');
-const prompt = `
+  const question = readlineSync.question('How I can Help You--> ');
+  const prompt = `
 You are an AI agent, who will respond to me in JSON format only.
 Analyse the user query and try to fetch city and date details from it.
-Date format should be in (yyyy-month-date) if user ask for future weather.
+Date format should be in (yyyy-mm-dd) if user ask for future weather.
 If user ask for today weather, mark date as 'today'.
 To fetch weather details, I already have some function which can fetch the weather details for me,
 
@@ -65,7 +71,7 @@ JSON format should look like below:
   "location": [{"city":"mumbai", "date":"today"},{"city":"delhi", "date":"2025-04-30"}]
 }
 
-As an LLM; You don't know currrent date: Mark Today date is 2025-04-25
+As an LLM; You don't know currrent date: Mark Today date is 2026-06-02
 
 Once you have the weather report details, respond me in JSON format only.
 If I have provided you weather details of delhi and you have enough information about them, make the summary of weather report and return it to me like below.
@@ -85,35 +91,40 @@ Strictly follow JSON format, respond only in JSON format.
 
 `
 
-ConversationHistory.push({
+  ConversationHistory.push({
     role: "user",
     parts: [{ text: prompt }]
-})
+  });
 
-while(true){
+  while (true) {
+    const responseText = await main();
+    ConversationHistory.push({ role: 'model', parts: [{ text: responseText }] });
 
-let response = await main();
-ConversationHistory.push({role:'model',parts:[{text:response}]})
-// console.log(response);
-response = response.trim();
-response = response.replace(/^```json\s*|```$/g,'').trim();
-// console.log(response);
-const data = JSON.parse(response);
-// console.log(data);
+    const cleanedResponse = responseText
+      .trim()
+      .replace(/^```(?:json)?\s*/i, '')
+      .replace(/```\s*$/i, '')
+      .trim();
 
+    let data;
+    try {
+      data = JSON.parse(cleanedResponse);
+    } catch (error) {
+      throw new Error(`Model did not return valid JSON: ${cleanedResponse}`);
+    }
 
-if(data.weather_details_needed==false){
-    console.log(data.weather_report);
-    break;
-}
+    if (data.weather_details_needed === false) {
+      console.log(data.weather_report);
+      break;
+    }
 
-// console.log(data.location);
-const weatherInformation = await getWeather(data.location);
-const weatherInfo = JSON.stringify(weatherInformation);
-// console.log(weatherInfo);
-ConversationHistory.push({role:'user',parts:[{text:`This is the weather report I Have fetched for you, use this weather report to generate user response, earlier you asked me to fetch weather details for model. ${weatherInfo}`}]})
-
-}
+    const weatherInformation = await getWeather(data.location);
+    const weatherInfo = JSON.stringify(weatherInformation);
+    ConversationHistory.push({
+      role: 'user',
+      parts: [{ text: `This is the weather report I have fetched for you. Use this weather report to generate the final user response: ${weatherInfo}` }]
+    });
+  }
 
 }
 
